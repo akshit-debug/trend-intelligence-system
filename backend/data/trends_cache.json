@@ -3,9 +3,9 @@
     {
       "id": 47556729,
       "keyword": "Founder of GitLab",
-      "mentions": 179733,
-      "growth": 7.67657196919868,
-      "status": "Rising",
+      "mentions": 92276,
+      "growth": 43.882187817141684,
+      "status": "Falling",
       "sentiment": {
         "positive": 0,
         "neutral": 100.0,
@@ -15,74 +15,35 @@
       "historical_data": [
         {
           "date": "2026-03-24",
-          "mentions": 53395
+          "mentions": 23812
         },
         {
           "date": "2026-03-25",
-          "mentions": 65910
+          "mentions": 41000
         },
         {
           "date": "2026-03-26",
-          "mentions": 104116
+          "mentions": 46917
         },
         {
           "date": "2026-03-27",
-          "mentions": 126261
+          "mentions": 65186
         },
         {
           "date": "2026-03-28",
-          "mentions": 147233
+          "mentions": 81602
         },
         {
           "date": "2026-03-29",
-          "mentions": 183255
-        }
-      ]
-    },
-    {
-      "id": 47560981,
-      "keyword": "The road to",
-      "mentions": 1820,
-      "growth": -4.6667190908544836,
-      "status": "Rising",
-      "sentiment": {
-        "positive": 0,
-        "neutral": 100.0,
-        "negative": 0,
-        "score": 5.0
-      },
-      "historical_data": [
-        {
-          "date": "2026-03-24",
-          "mentions": 495
-        },
-        {
-          "date": "2026-03-25",
-          "mentions": 691
-        },
-        {
-          "date": "2026-03-26",
-          "mentions": 1061
-        },
-        {
-          "date": "2026-03-27",
-          "mentions": 1215
-        },
-        {
-          "date": "2026-03-28",
-          "mentions": 1557
-        },
-        {
-          "date": "2026-03-29",
-          "mentions": 1775
+          "mentions": 91658
         }
       ]
     },
     {
       "id": 47526471,
       "keyword": "When Do We",
-      "mentions": 1448,
-      "growth": -1.1992399836614274,
+      "mentions": 1956,
+      "growth": 1.6647645458478735,
       "status": "Rising",
       "sentiment": {
         "positive": 20.0,
@@ -93,35 +54,74 @@
       "historical_data": [
         {
           "date": "2026-03-24",
-          "mentions": 308
+          "mentions": 573
         },
         {
           "date": "2026-03-25",
-          "mentions": 535
+          "mentions": 687
         },
         {
           "date": "2026-03-26",
-          "mentions": 832
+          "mentions": 1095
         },
         {
           "date": "2026-03-27",
-          "mentions": 1057
+          "mentions": 1400
         },
         {
           "date": "2026-03-28",
-          "mentions": 1174
+          "mentions": 1661
         },
         {
           "date": "2026-03-29",
-          "mentions": 1450
+          "mentions": 1997
+        }
+      ]
+    },
+    {
+      "id": 47560981,
+      "keyword": "The road to",
+      "mentions": 3360,
+      "growth": 40.261236425129425,
+      "status": "Falling",
+      "sentiment": {
+        "positive": 0,
+        "neutral": 100.0,
+        "negative": 0,
+        "score": 5.0
+      },
+      "historical_data": [
+        {
+          "date": "2026-03-24",
+          "mentions": 687
+        },
+        {
+          "date": "2026-03-25",
+          "mentions": 1482
+        },
+        {
+          "date": "2026-03-26",
+          "mentions": 1930
+        },
+        {
+          "date": "2026-03-27",
+          "mentions": 2231
+        },
+        {
+          "date": "2026-03-28",
+          "mentions": 2811
+        },
+        {
+          "date": "2026-03-29",
+          "mentions": 3295
         }
       ]
     },
     {
       "id": 47526470,
       "keyword": "The Loneliness of",
-      "mentions": 1164,
-      "growth": 43.935523428965936,
+      "mentions": 960,
+      "growth": 36.61502354102262,
       "status": "Rising",
       "sentiment": {
         "positive": 60.0,
@@ -132,191 +132,35 @@
       "historical_data": [
         {
           "date": "2026-03-24",
-          "mentions": 257
+          "mentions": 277
         },
         {
           "date": "2026-03-25",
-          "mentions": 520
+          "mentions": 423
         },
         {
           "date": "2026-03-26",
-          "mentions": 612
+          "mentions": 497
         },
         {
           "date": "2026-03-27",
-          "mentions": 785
+          "mentions": 688
         },
         {
           "date": "2026-03-28",
-          "mentions": 965
+          "mentions": 836
         },
         {
           "date": "2026-03-29",
-          "mentions": 1208
-        }
-      ]
-    },
-    {
-      "id": 47557960,
-      "keyword": "CSS is DOOMed",
-      "mentions": 56320,
-      "growth": 37.276464095289,
-      "status": "Falling",
-      "sentiment": {
-        "positive": 0,
-        "neutral": 100.0,
-        "negative": 0,
-        "score": 5.0
-      },
-      "historical_data": [
-        {
-          "date": "2026-03-24",
-          "mentions": 13215
-        },
-        {
-          "date": "2026-03-25",
-          "mentions": 25218
-        },
-        {
-          "date": "2026-03-26",
-          "mentions": 32698
-        },
-        {
-          "date": "2026-03-27",
-          "mentions": 37516
-        },
-        {
-          "date": "2026-03-28",
-          "mentions": 50267
-        },
-        {
-          "date": "2026-03-29",
-          "mentions": 55995
-        }
-      ]
-    },
-    {
-      "id": 47523138,
-      "keyword": "Nonfiction Publishing, Under",
-      "mentions": 945,
-      "growth": 43.03679230380978,
-      "status": "Falling",
-      "sentiment": {
-        "positive": 45.0,
-        "neutral": 55.0,
-        "negative": 0,
-        "score": 7.2
-      },
-      "historical_data": [
-        {
-          "date": "2026-03-24",
-          "mentions": 197
-        },
-        {
-          "date": "2026-03-25",
-          "mentions": 402
-        },
-        {
-          "date": "2026-03-26",
-          "mentions": 563
-        },
-        {
-          "date": "2026-03-27",
-          "mentions": 673
-        },
-        {
-          "date": "2026-03-28",
-          "mentions": 800
-        },
-        {
-          "date": "2026-03-29",
-          "mentions": 966
-        }
-      ]
-    },
-    {
-      "id": 47554773,
-      "keyword": "AI overly affirms",
-      "mentions": 76080,
-      "growth": 2.8040647297936143,
-      "status": "Falling",
-      "sentiment": {
-        "positive": 0,
-        "neutral": 100.0,
-        "negative": 0,
-        "score": 5.0
-      },
-      "historical_data": [
-        {
-          "date": "2026-03-24",
-          "mentions": 20271
-        },
-        {
-          "date": "2026-03-25",
-          "mentions": 26947
-        },
-        {
-          "date": "2026-03-26",
-          "mentions": 43820
-        },
-        {
-          "date": "2026-03-27",
-          "mentions": 53337
-        },
-        {
-          "date": "2026-03-28",
-          "mentions": 66639
-        },
-        {
-          "date": "2026-03-29",
-          "mentions": 75815
-        }
-      ]
-    },
-    {
-      "id": 47559481,
-      "keyword": "Alzheimer's disease mortality",
-      "mentions": 20358,
-      "growth": 2.5007333754394,
-      "status": "Rising",
-      "sentiment": {
-        "positive": 0,
-        "neutral": 100.0,
-        "negative": 0,
-        "score": 5.0
-      },
-      "historical_data": [
-        {
-          "date": "2026-03-24",
-          "mentions": 5113
-        },
-        {
-          "date": "2026-03-25",
-          "mentions": 7462
-        },
-        {
-          "date": "2026-03-26",
-          "mentions": 11174
-        },
-        {
-          "date": "2026-03-27",
-          "mentions": 13666
-        },
-        {
-          "date": "2026-03-28",
-          "mentions": 17136
-        },
-        {
-          "date": "2026-03-29",
-          "mentions": 19600
+          "mentions": 972
         }
       ]
     },
     {
       "id": 47535369,
       "keyword": "The Many Roots",
-      "mentions": 280,
-      "growth": 37.13869047760524,
+      "mentions": 960,
+      "growth": 19.544878752102566,
       "status": "Rising",
       "sentiment": {
         "positive": 50.0,
@@ -327,35 +171,35 @@
       "historical_data": [
         {
           "date": "2026-03-24",
-          "mentions": 70
+          "mentions": 255
         },
         {
           "date": "2026-03-25",
-          "mentions": 120
+          "mentions": 353
         },
         {
           "date": "2026-03-26",
-          "mentions": 163
+          "mentions": 525
         },
         {
           "date": "2026-03-27",
-          "mentions": 202
+          "mentions": 710
         },
         {
           "date": "2026-03-28",
-          "mentions": 226
+          "mentions": 780
         },
         {
           "date": "2026-03-29",
-          "mentions": 279
+          "mentions": 971
         }
       ]
     },
     {
-      "id": 47536306,
-      "keyword": "The ANSI art",
-      "mentions": 4410,
-      "growth": 34.44224138339804,
+      "id": 47557960,
+      "keyword": "CSS is DOOMed",
+      "mentions": 46368,
+      "growth": 30.895715677299286,
       "status": "Rising",
       "sentiment": {
         "positive": 0,
@@ -366,74 +210,113 @@
       "historical_data": [
         {
           "date": "2026-03-24",
-          "mentions": 1320
+          "mentions": 12809
         },
         {
           "date": "2026-03-25",
-          "mentions": 1773
+          "mentions": 17677
         },
         {
           "date": "2026-03-26",
-          "mentions": 2442
+          "mentions": 26926
         },
         {
           "date": "2026-03-27",
-          "mentions": 3163
+          "mentions": 30741
         },
         {
           "date": "2026-03-28",
-          "mentions": 3530
+          "mentions": 39514
         },
         {
           "date": "2026-03-29",
-          "mentions": 4548
+          "mentions": 44726
         }
       ]
     },
     {
-      "id": 47541969,
-      "keyword": "I turned my",
-      "mentions": 2904,
-      "growth": 4.420902843307443,
-      "status": "Rising",
+      "id": 47554773,
+      "keyword": "AI overly affirms",
+      "mentions": 47700,
+      "growth": -4.32443128879963,
+      "status": "Falling",
       "sentiment": {
-        "positive": 30.0,
-        "neutral": 70.0,
+        "positive": 0,
+        "neutral": 100.0,
         "negative": 0,
-        "score": 6.5
+        "score": 5.0
       },
       "historical_data": [
         {
           "date": "2026-03-24",
-          "mentions": 599
+          "mentions": 12959
         },
         {
           "date": "2026-03-25",
-          "mentions": 1216
+          "mentions": 17315
         },
         {
           "date": "2026-03-26",
-          "mentions": 1554
+          "mentions": 24691
         },
         {
           "date": "2026-03-27",
-          "mentions": 1900
+          "mentions": 32277
         },
         {
           "date": "2026-03-28",
-          "mentions": 2379
+          "mentions": 38749
         },
         {
           "date": "2026-03-29",
-          "mentions": 2813
+          "mentions": 46479
         }
       ]
     },
     {
-      "id": 47528853,
-      "keyword": "A Verilog to",
-      "mentions": 3575,
-      "growth": 15.921800660190659,
+      "id": 47523138,
+      "keyword": "Nonfiction Publishing, Under",
+      "mentions": 965,
+      "growth": 1.9348213341833276,
+      "status": "Falling",
+      "sentiment": {
+        "positive": 45.0,
+        "neutral": 55.0,
+        "negative": 0,
+        "score": 7.2
+      },
+      "historical_data": [
+        {
+          "date": "2026-03-24",
+          "mentions": 245
+        },
+        {
+          "date": "2026-03-25",
+          "mentions": 418
+        },
+        {
+          "date": "2026-03-26",
+          "mentions": 527
+        },
+        {
+          "date": "2026-03-27",
+          "mentions": 669
+        },
+        {
+          "date": "2026-03-28",
+          "mentions": 799
+        },
+        {
+          "date": "2026-03-29",
+          "mentions": 983
+        }
+      ]
+    },
+    {
+      "id": 47559481,
+      "keyword": "Alzheimer's disease mortality",
+      "mentions": 17346,
+      "growth": -4.032216044594895,
       "status": "Rising",
       "sentiment": {
         "positive": 0,
@@ -444,35 +327,35 @@
       "historical_data": [
         {
           "date": "2026-03-24",
-          "mentions": 1001
+          "mentions": 4294
         },
         {
           "date": "2026-03-25",
-          "mentions": 1560
+          "mentions": 6452
         },
         {
           "date": "2026-03-26",
-          "mentions": 2043
+          "mentions": 9908
         },
         {
           "date": "2026-03-27",
-          "mentions": 2538
+          "mentions": 12843
         },
         {
           "date": "2026-03-28",
-          "mentions": 3198
+          "mentions": 14111
         },
         {
           "date": "2026-03-29",
-          "mentions": 3468
+          "mentions": 18145
         }
       ]
     },
     {
       "id": 47524778,
       "keyword": "Technology: The (nearly)",
-      "mentions": 7363,
-      "growth": 27.45089892362713,
+      "mentions": 2360,
+      "growth": 0.5104373805749232,
       "status": "Rising",
       "sentiment": {
         "positive": 100.0,
@@ -483,35 +366,152 @@
       "historical_data": [
         {
           "date": "2026-03-24",
-          "mentions": 2157
+          "mentions": 497
         },
         {
           "date": "2026-03-25",
-          "mentions": 3140
+          "mentions": 1028
         },
         {
           "date": "2026-03-26",
-          "mentions": 3689
+          "mentions": 1243
         },
         {
           "date": "2026-03-27",
-          "mentions": 4980
+          "mentions": 1634
         },
         {
           "date": "2026-03-28",
-          "mentions": 6606
+          "mentions": 2041
         },
         {
           "date": "2026-03-29",
-          "mentions": 7217
+          "mentions": 2375
+        }
+      ]
+    },
+    {
+      "id": 47536306,
+      "keyword": "The ANSI art",
+      "mentions": 4284,
+      "growth": 15.297689254152818,
+      "status": "Rising",
+      "sentiment": {
+        "positive": 0,
+        "neutral": 100.0,
+        "negative": 0,
+        "score": 5.0
+      },
+      "historical_data": [
+        {
+          "date": "2026-03-24",
+          "mentions": 1177
+        },
+        {
+          "date": "2026-03-25",
+          "mentions": 1659
+        },
+        {
+          "date": "2026-03-26",
+          "mentions": 2353
+        },
+        {
+          "date": "2026-03-27",
+          "mentions": 2951
+        },
+        {
+          "date": "2026-03-28",
+          "mentions": 3509
+        },
+        {
+          "date": "2026-03-29",
+          "mentions": 4450
+        }
+      ]
+    },
+    {
+      "id": 47541969,
+      "keyword": "I turned my",
+      "mentions": 2112,
+      "growth": 19.76198666663663,
+      "status": "Rising",
+      "sentiment": {
+        "positive": 30.0,
+        "neutral": 70.0,
+        "negative": 0,
+        "score": 6.5
+      },
+      "historical_data": [
+        {
+          "date": "2026-03-24",
+          "mentions": 538
+        },
+        {
+          "date": "2026-03-25",
+          "mentions": 846
+        },
+        {
+          "date": "2026-03-26",
+          "mentions": 1092
+        },
+        {
+          "date": "2026-03-27",
+          "mentions": 1393
+        },
+        {
+          "date": "2026-03-28",
+          "mentions": 1690
+        },
+        {
+          "date": "2026-03-29",
+          "mentions": 2066
+        }
+      ]
+    },
+    {
+      "id": 47528853,
+      "keyword": "A Verilog to",
+      "mentions": 11926,
+      "growth": 20.919930747531705,
+      "status": "Rising",
+      "sentiment": {
+        "positive": 0,
+        "neutral": 100.0,
+        "negative": 0,
+        "score": 5.0
+      },
+      "historical_data": [
+        {
+          "date": "2026-03-24",
+          "mentions": 2449
+        },
+        {
+          "date": "2026-03-25",
+          "mentions": 4578
+        },
+        {
+          "date": "2026-03-26",
+          "mentions": 6134
+        },
+        {
+          "date": "2026-03-27",
+          "mentions": 8217
+        },
+        {
+          "date": "2026-03-28",
+          "mentions": 10425
+        },
+        {
+          "date": "2026-03-29",
+          "mentions": 12362
         }
       ]
     },
     {
       "id": 47543186,
       "keyword": "OpenBSD on Motorola",
-      "mentions": 7298,
-      "growth": 7.391424117361998,
+      "mentions": 5850,
+      "growth": -1.2024971974267675,
       "status": "Rising",
       "sentiment": {
         "positive": 0,
@@ -522,36 +522,36 @@
       "historical_data": [
         {
           "date": "2026-03-24",
-          "mentions": 1988
+          "mentions": 1754
         },
         {
           "date": "2026-03-25",
-          "mentions": 3176
+          "mentions": 2219
         },
         {
           "date": "2026-03-26",
-          "mentions": 3889
+          "mentions": 2935
         },
         {
           "date": "2026-03-27",
-          "mentions": 5268
+          "mentions": 3896
         },
         {
           "date": "2026-03-28",
-          "mentions": 6274
+          "mentions": 5150
         },
         {
           "date": "2026-03-29",
-          "mentions": 7327
+          "mentions": 5662
         }
       ]
     },
     {
       "id": 47557166,
       "keyword": "Further human +",
-      "mentions": 38391,
-      "growth": 6.370937284593458,
-      "status": "Rising",
+      "mentions": 37168,
+      "growth": -2.905819857458937,
+      "status": "Falling",
       "sentiment": {
         "positive": 0,
         "neutral": 100.0,
@@ -561,27 +561,27 @@
       "historical_data": [
         {
           "date": "2026-03-24",
-          "mentions": 7703
+          "mentions": 8125
         },
         {
           "date": "2026-03-25",
-          "mentions": 15174
+          "mentions": 14530
         },
         {
           "date": "2026-03-26",
-          "mentions": 20985
+          "mentions": 19892
         },
         {
           "date": "2026-03-27",
-          "mentions": 28121
+          "mentions": 27701
         },
         {
           "date": "2026-03-28",
-          "mentions": 34018
+          "mentions": 30539
         },
         {
           "date": "2026-03-29",
-          "mentions": 38565
+          "mentions": 39013
         }
       ]
     }
@@ -590,7 +590,7 @@
     {
       "id": 1,
       "title": "Founder of GitLab Dominance",
-      "description": "Currently dominating search volume with 179,733 mentions. This trend accounts for significant market noise right now.",
+      "description": "Currently dominating search volume with 92,276 mentions. This trend accounts for significant market noise right now.",
       "severity": "high",
       "related_keyword": "Founder of GitLab"
     },
@@ -604,10 +604,10 @@
     {
       "id": 3,
       "title": "Velocity Spike Detected",
-      "description": "A rapid 43.9% growth spike detected in The Loneliness of. Potential breakout momentum in early stages.",
+      "description": "A rapid 43.9% growth spike detected in Founder of GitLab. Potential breakout momentum in early stages.",
       "severity": "medium",
-      "related_keyword": "The Loneliness of"
+      "related_keyword": "Founder of GitLab"
     }
   ],
-  "last_updated": "2026-03-29T14:28:10.096438"
+  "last_updated": "2026-03-29T14:41:10.131383"
 }
