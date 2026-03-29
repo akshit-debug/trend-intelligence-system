@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-zinc: #09090b;
+    --border-zinc: #27272a;
+  }
+
+  body {
+    @apply bg-zinc-950 text-zinc-300 antialiased font-sans selection:bg-brand-500/30 selection:text-white;
+    background-image: 
+      radial-gradient(circle at 50% -20%, #4f46e515, transparent 50%),
+      radial-gradient(circle at 0% 0%, #09090b, #09090b);
+  }
+}
+
+@layer components {
+  /* Classy Premium Glassmorphism 2.0 */
+  .glass-card {
+    @apply relative overflow-hidden bg-zinc-900/40 backdrop-blur-xl border border-zinc-800/50 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] rounded-3xl;
+  }
+
+  .glass-border-gradient {
+    @apply relative p-[1px] rounded-3xl overflow-hidden;
+    background: linear-gradient(to bottom, #27272a, #18181b);
+  }
+
+  /* Typography Utilities */
+  .text-heading {
+    @apply font-heading tracking-tight;
+  }
+
+  /* Micro-interactions */
+  .hover-glow {
+    @apply transition-all duration-300 hover:shadow-[0_0_20px_rgba(99,102,241,0.15)] hover:border-brand-500/30;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-zinc-950;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-zinc-800 rounded-full hover:bg-zinc-700 transition-colors;
+  }
+}
+
+/* Premium Grain Effect */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.02;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  z-index: 50;
+}
