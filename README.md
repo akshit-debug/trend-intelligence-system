@@ -56,4 +56,4 @@ The backend exposes several endpoints under the `/api` prefix:
 - **Database (Future)**: The current architecture supports easy migration from JSON files to PostgreSQL/MongoDB.
 
 ---
-*Created with ❤️ by Antigravity AI*
+

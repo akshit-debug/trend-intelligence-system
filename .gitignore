@@ -1,8 +1,11 @@
 # Python
 backend/venv/
+backend/.venv/
+.venv/
 backend/__pycache__/
 backend/*.pyc
 backend/trends_cache.json
+backend/data/*.sqlite3
 
 # Node
 frontend/node_modules/

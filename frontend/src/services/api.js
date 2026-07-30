@@ -24,5 +24,20 @@ export const api = {
   refreshTrends: async () => {
     const response = await axios.post(`${API_URL}/refresh`);
     return response.data;
+  },
+  getNews: async (limit = 60) => {
+    const response = await axios.get(`${API_URL}/news`, { params: { limit } });
+    return response.data;
+  },
+  createNewsStream: (onMessage) => {
+    const es = new EventSource(`${API_URL}/news/stream`);
+    es.onmessage = (e) => {
+      try {
+        const data = JSON.parse(e.data);
+        if (data && data.length > 0) onMessage(data);
+      } catch {}
+    };
+    es.onerror = () => es.close();
+    return () => es.close(); // return cleanup fn
   }
 };

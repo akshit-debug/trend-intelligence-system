@@ -1,5 +1,5 @@
 import React from 'react';
-import { LayoutDashboard, Lightbulb, Search, Settings, TrendingUp, ChevronLeft, ChevronRight } from 'lucide-react';
+import { LayoutDashboard, Lightbulb, Search, Settings, TrendingUp, Rss } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { cn } from '../lib/utils';
 
@@ -52,6 +52,12 @@ const Sidebar = ({ currentView, onViewChange }) => {
           label="Overview" 
           active={currentView === 'dashboard'} 
           onClick={() => onViewChange('dashboard')} 
+        />
+        <SidebarItem 
+          icon={Rss} 
+          label="Live News Feed" 
+          active={currentView === 'news'} 
+          onClick={() => onViewChange('news')} 
         />
         <SidebarItem 
           icon={Search} 

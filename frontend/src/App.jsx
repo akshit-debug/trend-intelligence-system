@@ -7,8 +7,9 @@ import SentimentCard from './components/SentimentCard';
 import InsightCard from './components/InsightCard';
 import GrowthBarChart from './charts/GrowthBarChart';
 import TrendLineChart from './charts/TrendLineChart';
+import LiveFeed from './components/LiveFeed';
 import { api } from './services/api';
-import { Hash, TrendingUp, Users, SearchIcon, Loader2, PlayCircle, ShieldCheck } from 'lucide-react';
+import { Hash, TrendingUp, Users, SearchIcon, Loader2, PlayCircle, ShieldCheck, Rss } from 'lucide-react';
 
 function App() {
   const [currentView, setCurrentView] = useState('dashboard');
@@ -313,6 +314,7 @@ function App() {
             {currentView === 'dashboard' && renderDashboard()}
             {currentView === 'insights' && renderInsights()}
             {currentView === 'search' && renderSearch()}
+            {currentView === 'news' && <LiveFeed key="news" />}
           </AnimatePresence>
         </div>
       </main>

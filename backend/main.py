@@ -28,8 +28,10 @@ app.include_router(router, prefix="/api")
 
 @app.on_event("startup")
 async def startup_event():
-    """Initializes the scraper engine on server startup."""
-    print("TrendIntel: Application Startup - Initializing Scraper...")
+    """Initializes the data store and scraper engine on server startup."""
+    print("TrendIntel: Application Startup - Initializing DB & Store...")
+    await store.startup()
+    print("TrendIntel: Store Init Complete. Refreshing Scraper Data...")
     await store.refresh() # Block to ensure initial data is available
     print("TrendIntel: Startup Refresh Complete.")
     

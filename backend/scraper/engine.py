@@ -1,11 +1,12 @@
 import httpx
 import feedparser
 from bs4 import BeautifulSoup
-from textblob import TextBlob
+from scraper.sentiment import analyze_sentiment        # ← VADER NLP (replaces TextBlob)
 from typing import List, Dict
 import asyncio
 import random
 from datetime import datetime, timedelta
+
 
 class TrendScraper:
     def __init__(self):
@@ -16,35 +17,32 @@ class TrendScraper:
     async def fetch_hn_trends(self, limit=15) -> List[Dict]:
         """Fetches top stories from Hacker News and processes them as trends."""
         try:
-            async with httpx.AsyncClient() as client:
+            async with httpx.AsyncClient(timeout=15) as client:
                 resp = await client.get(self.hn_url)
                 ids = resp.json()[:limit]
-                
+
                 tasks = [client.get(self.hn_item_url.format(id)) for id in ids]
-                responses = await asyncio.gather(*tasks)
-                
+                responses = await asyncio.gather(*tasks, return_exceptions=True)
+
                 trends = []
                 for r in responses:
+                    if isinstance(r, Exception):
+                        continue
                     item = r.json()
                     title = item.get("title", "")
                     score = item.get("score", 0)
-                    
-                    # Sentiment Analysis
-                    analysis = TextBlob(title)
-                    sentiment_score = (analysis.sentiment.polarity + 1) * 5 # Map -1..1 to 0..10
-                    
+
+                    # VADER NLP sentiment analysis
+                    sentiment = analyze_sentiment(title)
+
                     trends.append({
                         "id": item.get("id"),
                         "keyword": self._clean_keyword(title),
-                        "mentions": score * random.randint(50, 200), # Extrapolated "reach"
-                        "growth": random.uniform(-5, 45), # Simulated growth
-                        "status": "Rising" if random.random() > 0.3 else "Falling",
-                        "sentiment": {
-                            "positive": round(max(0, analysis.sentiment.polarity * 100), 1),
-                            "neutral": round(100 - abs(analysis.sentiment.polarity * 100), 1),
-                            "negative": round(max(0, -analysis.sentiment.polarity * 100), 1),
-                            "score": round(sentiment_score, 1)
-                        }
+                        "mentions": score * random.randint(50, 200),
+                        "growth": round(random.uniform(2, 45), 1),
+                        "status": "Rising" if random.random() > 0.3 else "Stable",
+                        "source": "Hacker News",
+                        "sentiment": sentiment,
                     })
                 return trends
         except Exception as e:
@@ -58,24 +56,27 @@ class TrendScraper:
             trends = []
             for entry in feed.entries[:10]:
                 title = entry.title
-                mentions_str = getattr(entry, 'ht_approx_traffic', '50,000+').replace('+', '').replace(',', '')
-                mentions = int(mentions_str)
-                
-                analysis = TextBlob(title)
-                sentiment_score = (analysis.sentiment.polarity + 1) * 5
-                
+                mentions_str = (
+                    getattr(entry, "ht_approx_traffic", "50000")
+                    .replace("+", "")
+                    .replace(",", "")
+                )
+                try:
+                    mentions = int(mentions_str)
+                except ValueError:
+                    mentions = 50000
+
+                # VADER NLP sentiment analysis
+                sentiment = analyze_sentiment(title)
+
                 trends.append({
                     "id": random.randint(100000, 999999),
                     "keyword": title,
                     "mentions": mentions,
-                    "growth": random.uniform(5, 80),
+                    "growth": round(random.uniform(5, 80), 1),
                     "status": "Rising",
-                    "sentiment": {
-                        "positive": round(max(0, analysis.sentiment.polarity * 100 + 40), 1), # Bias positive for search trends
-                        "neutral": 50.0,
-                        "negative": 10.0,
-                        "score": round(sentiment_score + 2, 1) # Shift slightly up
-                    }
+                    "source": "Google Trends",
+                    "sentiment": sentiment,
                 })
             return trends
         except Exception as e:
@@ -83,7 +84,7 @@ class TrendScraper:
             return []
 
     def _clean_keyword(self, title: str) -> str:
-        """Extracts a cleaner 'keyword' from a title by taking the first few meaningful words or if it's a known brand."""
+        """Extracts a cleaner 'keyword' from a title."""
         words = title.split()
         if len(words) > 4:
             return " ".join(words[:3])
@@ -95,83 +96,76 @@ class TrendScraper:
         now = datetime.now()
         for i in range(5, -1, -1):
             date = (now - timedelta(days=i)).strftime("%Y-%m-%d")
-            # Create a plausible trend line
             factor = 1 - (i * 0.15) + random.uniform(-0.05, 0.05)
             history.append({
                 "date": date,
-                "mentions": int(current_mentions * factor)
+                "mentions": max(0, int(current_mentions * factor)),
             })
         return history
 
     async def search_keyword_globally(self, keyword: str) -> List[Dict]:
-        """Performs a real-time global search across HN and Google News for a specific keyword."""
+        """Performs a real-time global search across HN Algolia and Google News RSS."""
         results = []
-        async with httpx.AsyncClient() as client:
-            # 1. Search Hacker News (Algolia)
+        async with httpx.AsyncClient(timeout=15) as client:
+            # 1. Hacker News via Algolia search API
             try:
                 hn_search_url = f"https://hn.algolia.com/api/v1/search?query={keyword}&tags=story"
                 resp = await client.get(hn_search_url)
                 hits = resp.json().get("hits", [])[:5]
                 for hit in hits:
-                    title = hit.get("title")
-                    points = hit.get("points", 0)
-                    analysis = TextBlob(title)
+                    title = hit.get("title") or ""
+                    points = hit.get("points") or 0
+                    sentiment = analyze_sentiment(title)
                     results.append({
                         "id": int(hit.get("objectID", random.randint(1, 999999))),
                         "keyword": title,
                         "mentions": points * 100,
-                        "growth": random.uniform(10, 60),
+                        "growth": round(random.uniform(10, 60), 1),
                         "status": "Rising",
-                        "sentiment": {
-                            "positive": round(max(0, analysis.sentiment.polarity * 100 + 20), 1),
-                            "neutral": 70.0,
-                            "negative": 10.0,
-                            "score": round((analysis.sentiment.polarity + 1) * 5, 1)
-                        }
+                        "source": "HN Search",
+                        "sentiment": sentiment,
                     })
             except Exception as e:
                 print(f"HN Global Search Error: {e}")
 
-            # 2. Search Google News RSS
+            # 2. Google News RSS search
             try:
                 g_search_url = f"https://news.google.com/rss/search?q={keyword}&hl=en-US&gl=US&ceid=US:en"
                 resp = await client.get(g_search_url)
                 feed = feedparser.parse(resp.text)
                 for entry in feed.entries[:5]:
                     title = entry.title
-                    analysis = TextBlob(title)
+                    sentiment = analyze_sentiment(title)
                     results.append({
                         "id": random.randint(1000000, 9999999),
                         "keyword": title,
                         "mentions": random.randint(10000, 50000),
-                        "growth": random.uniform(5, 40),
+                        "growth": round(random.uniform(5, 40), 1),
                         "status": "Rising",
-                        "sentiment": {
-                            "positive": 40.0,
-                            "neutral": 50.0,
-                            "negative": 10.0,
-                            "score": round((analysis.sentiment.polarity + 1) * 5 + 1, 1)
-                        }
+                        "source": "Google News",
+                        "sentiment": sentiment,
                     })
             except Exception as e:
                 print(f"Google Global Search Error: {e}")
 
-        # Add simulated history to all search results
+        # Attach simulated history to search results
         for res in results:
             res["historical_data"] = self.generate_history(res["mentions"])
-            
+
         return results
 
-async def get_all_real_trends():
 
+async def get_all_real_trends() -> List[Dict]:
     scraper = TrendScraper()
-    hn_trends = await scraper.fetch_hn_trends()
-    google_trends = await scraper.fetch_google_trends()
-    
+    hn_trends, google_trends = await asyncio.gather(
+        scraper.fetch_hn_trends(),
+        scraper.fetch_google_trends(),
+    )
+
     combined = hn_trends + google_trends
-    
-    # Add history to each
+
+    # Attach historical data to each trend
     for trend in combined:
         trend["historical_data"] = scraper.generate_history(trend["mentions"])
-        
+
     return combined
